@@ -27,9 +27,10 @@ app.get("/api/:date?", function (req, res) {
 
 
 const getResponse = (dateGiven) => {
-  const dateString = date;
+  const dateString = dateGiven;
 
   let date;
+  let response;
 
   if (!dateString) {
     date = new Date(); // current date
@@ -47,6 +48,9 @@ const getResponse = (dateGiven) => {
       utc: date.toUTCString(),
     };
   }
+
+  return response;
+
 }
 
 
